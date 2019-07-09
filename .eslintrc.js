@@ -1,4 +1,5 @@
 module.exports = {
+  extends: ['eslint-config-prettier'],
   env: {
     es6: true,
     node: true,
