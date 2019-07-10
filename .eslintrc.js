@@ -15,6 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'implicit-arrow-linebreak': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
