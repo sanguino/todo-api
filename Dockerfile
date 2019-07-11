@@ -12,7 +12,7 @@ RUN ["npm", "run", "lint"]
 
 # Gets Sonarqube Scanner from Dockerhub and runs it
 FROM newtmitch/sonar-scanner:latest AS sonarqube
-COPY --from=base /usr/src/app/src /usr/src
+COPY --from=base /usr/src/app /usr/src
 CMD ["sonar-scanner -Dsonar.projectBaseDir=/usr/src"]
 
 # Runs Unit Tests
@@ -23,5 +23,6 @@ RUN ["npm", "run", "test"]
 
 # Starts and Serves Web Page
 FROM node:latest
-COPY --from=base /usr/src/app/src /usr/src
-RUN ["node", "start.js"]
+WORKDIR /usr/src/app
+COPY --from=base /usr/src/app .
+CMD node start.js
