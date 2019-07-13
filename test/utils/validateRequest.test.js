@@ -15,8 +15,7 @@ describe('validators', () => {
   });
 
   describe('checkIdAndText', () => {
-    it('should validate correct object', () =>
-      expect(checkIdAndText({ id: '1', text: 'buy milk' })).to.be.fulfilled);
+    it('should validate correct object', () => expect(checkIdAndText({ id: '1', text: 'buy milk' })).to.be.fulfilled);
 
     it('should not validate if text not been set', () =>
       expect(checkIdAndText({ id: '1' })).to.be.rejectedWith('validation handler: bad data'));
@@ -32,16 +31,13 @@ describe('validators', () => {
   });
 
   describe('checkIdAndText', () => {
-    it('should validate correct object', () =>
-      expect(checkIdAndCompleted('1', { completed: true })).to.be.fulfilled);
+    it('should validate correct object', () => expect(checkIdAndCompleted('1', { completed: true })).to.be.fulfilled);
 
     it('should not validate if completed not been set', () =>
       expect(checkIdAndText('1', {})).to.be.rejectedWith('validation handler: bad data'));
 
     it('should not validate if id not been set', () =>
-      expect(checkIdAndText('', { completed: true })).to.be.rejectedWith(
-        'validation handler: bad data',
-      ));
+      expect(checkIdAndText('', { completed: true })).to.be.rejectedWith('validation handler: bad data'));
 
     it('should not validate no params set', () =>
       expect(checkIdAndText()).to.be.rejectedWith('validation handler: bad data'));
