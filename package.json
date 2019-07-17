@@ -9,7 +9,7 @@
     "test": "mocha test/**/*.js --require esm",
     "coverage": "nyc npm run test",
     "debug": "DEBUG=* npm run start",
-    "start": "MONGO_HOST=127.0.0.1 MONGO_PORT=27017 MONGO_DB=tasksDB node start.js"
+    "start": "MONGO_HOST=127.0.0.1 MONGO_PORT=27017 MONGO_DB=tasksDB SUPER_SECRET=pass node start.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
@@ -35,13 +35,13 @@
       "git add"
     ]
   },
-  "name": "todo-auth",
+  "name": "todo-api",
   "version": "1.0.0",
   "description": "Tasks Api for todo-app",
   "main": "start.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sanguino/todo-auth.git"
+    "url": "git+https://github.com/sanguino/todo-api.git"
   },
   "author": "",
   "license": "ISC",
